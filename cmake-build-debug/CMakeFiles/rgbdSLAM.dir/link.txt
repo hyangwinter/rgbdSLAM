@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/rgbdSLAM.dir/main.cpp.o  -o rgbdSLAM 

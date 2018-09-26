@@ -1,0 +1,6 @@
+/home/yangh/Desktop/rgbdSLAM/build/CMakeFiles/edit_cache.dir
+/home/yangh/Desktop/rgbdSLAM/build/CMakeFiles/rebuild_cache.dir
+/home/yangh/Desktop/rgbdSLAM/build/src/CMakeFiles/rebuild_cache.dir
+/home/yangh/Desktop/rgbdSLAM/build/src/CMakeFiles/generate_pointcloud.dir
+/home/yangh/Desktop/rgbdSLAM/build/src/CMakeFiles/edit_cache.dir
+/home/yangh/Desktop/rgbdSLAM/build/src/CMakeFiles/slambase.dir
