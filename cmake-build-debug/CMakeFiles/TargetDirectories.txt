@@ -1,6 +1,6 @@
 /home/yangh/Desktop/rgbdSLAM/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/yangh/Desktop/rgbdSLAM/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/yangh/Desktop/rgbdSLAM/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
-/home/yangh/Desktop/rgbdSLAM/cmake-build-debug/src/CMakeFiles/generate_pointcloud.dir
+/home/yangh/Desktop/rgbdSLAM/cmake-build-debug/src/CMakeFiles/joinPointCloud.dir
 /home/yangh/Desktop/rgbdSLAM/cmake-build-debug/src/CMakeFiles/edit_cache.dir
 /home/yangh/Desktop/rgbdSLAM/cmake-build-debug/src/CMakeFiles/slambase.dir

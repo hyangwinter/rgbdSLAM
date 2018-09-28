@@ -111,19 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/generate_pointcloud.dir/rule:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/generate_pointcloud.dir/rule
-.PHONY : src/CMakeFiles/generate_pointcloud.dir/rule
+src/CMakeFiles/joinPointCloud.dir/rule:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/joinPointCloud.dir/rule
+.PHONY : src/CMakeFiles/joinPointCloud.dir/rule
 
 # Convenience name for target.
-generate_pointcloud: src/CMakeFiles/generate_pointcloud.dir/rule
+joinPointCloud: src/CMakeFiles/joinPointCloud.dir/rule
 
-.PHONY : generate_pointcloud
+.PHONY : joinPointCloud
 
 # fast build rule for target.
-generate_pointcloud/fast:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/generate_pointcloud.dir/build.make src/CMakeFiles/generate_pointcloud.dir/build
-.PHONY : generate_pointcloud/fast
+joinPointCloud/fast:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/joinPointCloud.dir/build.make src/CMakeFiles/joinPointCloud.dir/build
+.PHONY : joinPointCloud/fast
 
 # Convenience name for target.
 src/CMakeFiles/slambase.dir/rule:
@@ -140,32 +140,32 @@ slambase/fast:
 	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/slambase.dir/build.make src/CMakeFiles/slambase.dir/build
 .PHONY : slambase/fast
 
-generatePointCloud.o: generatePointCloud.cpp.o
+joinPointCloud.o: joinPointCloud.cpp.o
 
-.PHONY : generatePointCloud.o
+.PHONY : joinPointCloud.o
 
 # target to build an object file
-generatePointCloud.cpp.o:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/generate_pointcloud.dir/build.make src/CMakeFiles/generate_pointcloud.dir/generatePointCloud.cpp.o
-.PHONY : generatePointCloud.cpp.o
+joinPointCloud.cpp.o:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/joinPointCloud.dir/build.make src/CMakeFiles/joinPointCloud.dir/joinPointCloud.cpp.o
+.PHONY : joinPointCloud.cpp.o
 
-generatePointCloud.i: generatePointCloud.cpp.i
+joinPointCloud.i: joinPointCloud.cpp.i
 
-.PHONY : generatePointCloud.i
+.PHONY : joinPointCloud.i
 
 # target to preprocess a source file
-generatePointCloud.cpp.i:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/generate_pointcloud.dir/build.make src/CMakeFiles/generate_pointcloud.dir/generatePointCloud.cpp.i
-.PHONY : generatePointCloud.cpp.i
+joinPointCloud.cpp.i:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/joinPointCloud.dir/build.make src/CMakeFiles/joinPointCloud.dir/joinPointCloud.cpp.i
+.PHONY : joinPointCloud.cpp.i
 
-generatePointCloud.s: generatePointCloud.cpp.s
+joinPointCloud.s: joinPointCloud.cpp.s
 
-.PHONY : generatePointCloud.s
+.PHONY : joinPointCloud.s
 
 # target to generate assembly for a file
-generatePointCloud.cpp.s:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/generate_pointcloud.dir/build.make src/CMakeFiles/generate_pointcloud.dir/generatePointCloud.cpp.s
-.PHONY : generatePointCloud.cpp.s
+joinPointCloud.cpp.s:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/joinPointCloud.dir/build.make src/CMakeFiles/joinPointCloud.dir/joinPointCloud.cpp.s
+.PHONY : joinPointCloud.cpp.s
 
 slamBase.o: slamBase.cpp.o
 
@@ -201,12 +201,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... generate_pointcloud"
+	@echo "... joinPointCloud"
 	@echo "... edit_cache"
 	@echo "... slambase"
-	@echo "... generatePointCloud.o"
-	@echo "... generatePointCloud.i"
-	@echo "... generatePointCloud.s"
+	@echo "... joinPointCloud.o"
+	@echo "... joinPointCloud.i"
+	@echo "... joinPointCloud.s"
 	@echo "... slamBase.o"
 	@echo "... slamBase.i"
 	@echo "... slamBase.s"
