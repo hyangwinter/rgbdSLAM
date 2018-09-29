@@ -249,6 +249,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "src/CMakeFiles/joinPointCloud.dir/DependInfo.cmake"
+  "src/CMakeFiles/visualOdometry.dir/DependInfo.cmake"
   "src/CMakeFiles/slambase.dir/DependInfo.cmake"
   )

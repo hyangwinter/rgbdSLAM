@@ -111,19 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/joinPointCloud.dir/rule:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/joinPointCloud.dir/rule
-.PHONY : src/CMakeFiles/joinPointCloud.dir/rule
+src/CMakeFiles/visualOdometry.dir/rule:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/visualOdometry.dir/rule
+.PHONY : src/CMakeFiles/visualOdometry.dir/rule
 
 # Convenience name for target.
-joinPointCloud: src/CMakeFiles/joinPointCloud.dir/rule
+visualOdometry: src/CMakeFiles/visualOdometry.dir/rule
 
-.PHONY : joinPointCloud
+.PHONY : visualOdometry
 
 # fast build rule for target.
-joinPointCloud/fast:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/joinPointCloud.dir/build.make src/CMakeFiles/joinPointCloud.dir/build
-.PHONY : joinPointCloud/fast
+visualOdometry/fast:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/visualOdometry.dir/build.make src/CMakeFiles/visualOdometry.dir/build
+.PHONY : visualOdometry/fast
 
 # Convenience name for target.
 src/CMakeFiles/slambase.dir/rule:
@@ -139,33 +139,6 @@ slambase: src/CMakeFiles/slambase.dir/rule
 slambase/fast:
 	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/slambase.dir/build.make src/CMakeFiles/slambase.dir/build
 .PHONY : slambase/fast
-
-joinPointCloud.o: joinPointCloud.cpp.o
-
-.PHONY : joinPointCloud.o
-
-# target to build an object file
-joinPointCloud.cpp.o:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/joinPointCloud.dir/build.make src/CMakeFiles/joinPointCloud.dir/joinPointCloud.cpp.o
-.PHONY : joinPointCloud.cpp.o
-
-joinPointCloud.i: joinPointCloud.cpp.i
-
-.PHONY : joinPointCloud.i
-
-# target to preprocess a source file
-joinPointCloud.cpp.i:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/joinPointCloud.dir/build.make src/CMakeFiles/joinPointCloud.dir/joinPointCloud.cpp.i
-.PHONY : joinPointCloud.cpp.i
-
-joinPointCloud.s: joinPointCloud.cpp.s
-
-.PHONY : joinPointCloud.s
-
-# target to generate assembly for a file
-joinPointCloud.cpp.s:
-	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/joinPointCloud.dir/build.make src/CMakeFiles/joinPointCloud.dir/joinPointCloud.cpp.s
-.PHONY : joinPointCloud.cpp.s
 
 slamBase.o: slamBase.cpp.o
 
@@ -194,6 +167,33 @@ slamBase.cpp.s:
 	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/slambase.dir/build.make src/CMakeFiles/slambase.dir/slamBase.cpp.s
 .PHONY : slamBase.cpp.s
 
+visualOdometry.o: visualOdometry.cpp.o
+
+.PHONY : visualOdometry.o
+
+# target to build an object file
+visualOdometry.cpp.o:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/visualOdometry.dir/build.make src/CMakeFiles/visualOdometry.dir/visualOdometry.cpp.o
+.PHONY : visualOdometry.cpp.o
+
+visualOdometry.i: visualOdometry.cpp.i
+
+.PHONY : visualOdometry.i
+
+# target to preprocess a source file
+visualOdometry.cpp.i:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/visualOdometry.dir/build.make src/CMakeFiles/visualOdometry.dir/visualOdometry.cpp.i
+.PHONY : visualOdometry.cpp.i
+
+visualOdometry.s: visualOdometry.cpp.s
+
+.PHONY : visualOdometry.s
+
+# target to generate assembly for a file
+visualOdometry.cpp.s:
+	cd /home/yangh/Desktop/rgbdSLAM/build && $(MAKE) -f src/CMakeFiles/visualOdometry.dir/build.make src/CMakeFiles/visualOdometry.dir/visualOdometry.cpp.s
+.PHONY : visualOdometry.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -201,15 +201,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... joinPointCloud"
+	@echo "... visualOdometry"
 	@echo "... edit_cache"
 	@echo "... slambase"
-	@echo "... joinPointCloud.o"
-	@echo "... joinPointCloud.i"
-	@echo "... joinPointCloud.s"
 	@echo "... slamBase.o"
 	@echo "... slamBase.i"
 	@echo "... slamBase.s"
+	@echo "... visualOdometry.o"
+	@echo "... visualOdometry.i"
+	@echo "... visualOdometry.s"
 .PHONY : help
 
 

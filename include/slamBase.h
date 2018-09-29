@@ -21,6 +21,13 @@ using namespace std;
 //PCL
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
+#include <pcl/common/transforms.h>
+#include <pcl/visualization/cloud_viewer.h>
+#include <pcl/filters/voxel_grid.h>
+
+// Eigen !
+#include <Eigen/Core>
+#include <Eigen/Geometry>
 
 // 类型定义
 typedef pcl::PointXYZRGBA PointT;
@@ -61,6 +68,14 @@ void computeKeyPointsAndDesp( FRAME& frame, string detector, string descriptor )
 // estimateMotion 计算两个帧之间的运动
 // 输入：帧1和帧2, 相机内参
 RESULT_OF_PNP estimateMotion( FRAME& frame1, FRAME& frame2, CAMERA_INTRINSIC_PARAMETERS& camera );
+
+Eigen::Isometry3d cvMat2Eigen( cv::Mat& rvec, cv::Mat& tvec );
+
+// joinPointCloud 
+// 输入：原始点云，新来的帧以及它的位姿
+// 输出：将新来帧加到原始帧后的图像
+PointCloud::Ptr joinPointCloud( PointCloud::Ptr original, FRAME& newFrame, Eigen::Isometry3d T, CAMERA_INTRINSIC_PARAMETERS& camera );
+
 
 // 参数读取类
 class ParameterReader

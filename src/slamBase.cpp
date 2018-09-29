@@ -11,6 +11,8 @@
 
 #include "slamBase.h"
 
+
+
 PointCloud::Ptr image2PointCloud( cv::Mat& rgb, cv::Mat& depth, CAMERA_INTRINSIC_PARAMETERS& camera )
 {
     PointCloud::Ptr cloud ( new PointCloud );
@@ -106,6 +108,12 @@ RESULT_OF_PNP estimateMotion( FRAME& frame1, FRAME& frame2, CAMERA_INTRINSIC_PAR
     }
 
     cout<<"good matches: "<<goodMatches.size()<<endl;
+    RESULT_OF_PNP result;
+    if(goodMatches.size() < 10)
+    {
+        result.inliers = 0;
+        return result;
+    }
     // 第一个帧的三维点
     vector<cv::Point3f> pts_obj;
     // 第二个帧的图像点
@@ -141,10 +149,59 @@ RESULT_OF_PNP estimateMotion( FRAME& frame1, FRAME& frame2, CAMERA_INTRINSIC_PAR
     // 求解pnp
     cv::solvePnPRansac( pts_obj, pts_img, cameraMatrix, cv::Mat(), rvec, tvec, false, 100, 1.0, 100, inliers );
 
-    RESULT_OF_PNP result;
+    
     result.rvec = rvec;
     result.tvec = tvec;
     result.inliers = inliers.rows;
 
     return result;
+}
+
+Eigen::Isometry3d cvMat2Eigen( cv::Mat& rvec, cv::Mat& tvec )
+{
+    // 处理result
+    // 将旋转向量转化为旋转矩阵
+    cv::Mat R;
+    cv::Rodrigues(rvec, R);
+    Eigen::Matrix3d r;
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            r(i,j) = R.at<double>(i,j);
+        }
+    }
+
+    // 将平移向量和旋转矩阵转换成变换矩阵
+    Eigen::Isometry3d T = Eigen::Isometry3d::Identity();
+    Eigen::AngleAxisd angle(r);
+    //Eigen::Translation<double,3> trans(result.tvec.at<double>(0,0), result.tvec.at<double>(0,1), result.tvec.at<double>(0,2));
+    T = angle;
+    T(0,3) = tvec.at<double>(0,0); 
+    T(1,3) = tvec.at<double>(1,0); 
+    T(2,3) = tvec.at<double>(2,0);
+    return T;
+}
+
+// joinPointCloud 
+// 输入：原始点云，新来的帧以及它的位姿
+// 输出：将新来帧加到原始帧后的图像
+PointCloud::Ptr joinPointCloud( PointCloud::Ptr original, FRAME& newFrame, Eigen::Isometry3d T, CAMERA_INTRINSIC_PARAMETERS& camera ) 
+{
+    PointCloud::Ptr newCloud = image2PointCloud( newFrame.rgb, newFrame.depth, camera );
+
+    // 合并点云
+    PointCloud::Ptr output (new PointCloud());
+    pcl::transformPointCloud( *original, *output, T.matrix() );
+    *newCloud += *output;
+
+    // Voxel grid 滤波降采样
+    static pcl::VoxelGrid<PointT> voxel;
+    static ParameterReader pd;
+    double gridsize = atof( pd.getData("voxel_grid").c_str() );
+    voxel.setLeafSize( gridsize, gridsize, gridsize );
+    voxel.setInputCloud( newCloud );
+    PointCloud::Ptr tmp( new PointCloud() );
+    voxel.filter( *tmp );
+    return tmp;
 }

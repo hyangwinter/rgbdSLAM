@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "array": "cpp"
+        "array": "cpp",
+        "functional": "cpp",
+        "core": "cpp",
+        "iostream": "cpp",
+        "fstream": "cpp",
+        "vector": "cpp",
+        "deque": "cpp"
     }
 }

@@ -1,5 +1,5 @@
 # 增加PCL库的依赖
-FIND_PACKAGE( PCL REQUIRED COMPONENTS common io visualization)
+FIND_PACKAGE( PCL REQUIRED COMPONENTS common io visualization filters)
 
 # 增加opencv的依赖
 FIND_PACKAGE( OpenCV 2.4 REQUIRED )
@@ -17,6 +17,9 @@ TARGET_LINK_LIBRARIES( slambase ${OpenCV_LIBS} ${PCL_LIBRARIES} )
 #ADD_EXECUTABLE( detectFeatures detectFeatures.cpp )
 #TARGET_LINK_LIBRARIES( detectFeatures slambase ${OpenCV_LIBS} ${PCL_LIBRARIES} )
 
-ADD_EXECUTABLE( joinPointCloud joinPointCloud.cpp )
-TARGET_LINK_LIBRARIES( joinPointCloud slambase ${OpenCV_LIBS} ${PCL_LIBRARIES} )
+#ADD_EXECUTABLE( joinPointCloud joinPointCloud.cpp )
+#TARGET_LINK_LIBRARIES( joinPointCloud slambase ${OpenCV_LIBS} ${PCL_LIBRARIES} )
+
+ADD_EXECUTABLE( visualOdometry visualOdometry.cpp )
+TARGET_LINK_LIBRARIES( visualOdometry slambase ${OpenCV_LIBS} ${PCL_LIBRARIES} )
 
